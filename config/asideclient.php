@@ -3,7 +3,7 @@
     <a href="#" class="app-brand-link">
       <span class="app-brand-logo demo me-1">
 
-        <img src="../assets/logo2.PNG" style="width: 4rem;" alt="" srcset="">
+        <img src="../assets/logonew.png" style="width: 4rem;" alt="" srcset="">
       </span>
       <span class="app-brand-text demo menu-text fw-semibold ms-2">Fresh Way</span>
     </a>

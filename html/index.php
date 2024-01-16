@@ -31,7 +31,8 @@ if (isset($_SESSION['roleId']) && isset($_SESSION['username'])) { ?>
     $clientsCount = 0;
   }
   // get data for dashboard
-  $sql = "SELECT sum(total_amount) as total FROM `order_list` WHERE status=2";
+  $sql = "SELECT sum(total_amount) as total FROM `order_list` WHERE status=2 AND MONTH(date_updated) = MONTH(CURRENT_DATE()) 
+  AND YEAR(date_updated) = YEAR(CURRENT_DATE())";
   $result = $conn->query($sql);
   if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();

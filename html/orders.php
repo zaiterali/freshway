@@ -338,7 +338,7 @@ if (isset($_SESSION['roleId']) && isset($_SESSION['username'])) { ?>
         printableContent += '<div class="d-flex flex-row justify-content-between">';
         printableContent += '<div class="d-flex flex-column align-items-center">';
         printableContent +=
-          '<img src="../assets/logo.PNG" width="100" class="rounded float-start" alt="" srcset="">';
+          '<img src="../assets/logonew.png" width="100" class="rounded float-start" alt="" srcset="">';
         printableContent += '<h4>FreshWay Lb</h4>';
         printableContent += '<p>+961 76 482 291</p>';
         printableContent += '</div>';
@@ -472,18 +472,25 @@ if (isset($_SESSION['roleId']) && isset($_SESSION['username'])) { ?>
         printableContent += '<div class="d-flex flex-row justify-content-between">';
         printableContent += '<div class="d-flex flex-column align-items-center">';
         printableContent +=
-          '<img src="../assets/logo.PNG" width="100" class="rounded float-start" alt="" srcset="">';
+          '<img src="../assets/logonew.png" width="100" class="rounded float-start" alt="" srcset="">';
         printableContent += '<h4>FreshWay Lb</h4>';
         printableContent += '<p>+961 76 482 291</p>';
         printableContent += '</div>';
-        printableContent += '<div class="d-flex flex-column align-items-start">';
-        printableContent += '<p>Order Number:&nbsp;<span class="fw-bold">' + orderDetails.order_id + '</span></p>';
-        printableContent += '<p>Client:&nbsp;<span class="fw-bold">' + orderDetails.client_name + '</span></p>';
-        printableContent += '<p>Delivery Date:&nbsp;<span class="fw-bold">' + orderDetails.delivery_date +
+        printableContent += '<div class="d-flex flex-column align-items-start justify-content-center">';
+        printableContent += '<p class="mb-0" style="font-size:medium;">Order Number:&nbsp;<span class="">' +
+          orderDetails
+          .order_id + '</span></p>';
+        printableContent += '<p class="mb-0" style="font-size:medium;">Client:&nbsp;<span class="">' + orderDetails
+          .client_name + '</span></p>';
+        printableContent += '<p class="mb-0" style="font-size:medium;">Delivery Date:&nbsp;<span class="">' +
+          orderDetails
+          .delivery_date +
           '</span></p>';
         // Print Date section
         var todayDate = new Date().toISOString().split('T')[0];
-        printableContent += '<p>Print Date:&nbsp;<span class="fw-bold">' + todayDate + '</span></p>';
+        printableContent += '<p class="mb-0" style="font-size:medium;">Print Date:&nbsp;<span class="">' +
+          todayDate +
+          '</span></p>';
         printableContent += '</div>';
         printableContent += '</div>';
         printableContent += '<hr>';
@@ -539,19 +546,19 @@ if (isset($_SESSION['roleId']) && isset($_SESSION['username'])) { ?>
         printableContent += '</div>';
 
         // Calculate VAT amount (15% of the total)
-        var vatAmount = orderDetails.total_amount * 0.15;
+        var vatAmount = orderDetails.total_amount * 0.11;
         var subTotal = orderDetails.total_amount - vatAmount;
 
         printableContent += '<div class="d-flex flex-column align-items-start">';
         printableContent += '<p>SUB TOTAL: <span id="subTotal" class="fw-bold">$ ' + subTotal.toFixed(2) +
           '</span></p>';
-        printableContent += '<p>VAT 15%: <span id="vat" class="fw-bold">$ ' + vatAmount.toFixed(2) + '</span></p>';
+        printableContent += '<p>VAT 11%: <span id="vat" class="fw-bold">$ ' + vatAmount.toFixed(2) + '</span></p>';
         printableContent += '<p>TOTAL: <span id="total" class="fw-bold">$ ' + orderDetails.total_amount +
           '</span></p>';
         if (orderDetails.order_status == 2) {
 
           printableContent +=
-            '<img src="../assets/paid.PNG" width="100" class="rounded float-start" alt="" srcset="">';
+            '<img src="../assets/paid.png" width="100" class="rounded float-start" alt="" srcset="">';
         }
 
 

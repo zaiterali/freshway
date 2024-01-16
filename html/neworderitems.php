@@ -188,15 +188,28 @@ if (isset($_SESSION['roleId']) && isset($_SESSION['username'])) { ?>
               <div class="d-flex flex-row justify-content-between px-4">
                 <div class="d-flex flex-column align-items-center">
                   <div class="form-floating form-floating-outline">
-                    <textarea class="form-control h-px-100 w-px-400" readonly id="exampleFormControlTextarea1"
+                    <textarea class="form-control h-px-100 w-px-250" readonly id="exampleFormControlTextarea1"
                       placeholder=""><?php echo $orderNote ?></textarea>
                     <label for="exampleFormControlTextarea1">Order Notes:</label>
                   </div>
                 </div>
-                <div class="d-flex flex-column align-items-start">
-                  <p>Sub Total: <span id="subTotal" class="fw-bold"></span></p>
-                  <p>VAT 15%: <span id="vat" class="fw-bold"></span></p>
-                  <p>Total: <span id="total" class="fw-bold"></span></p>
+                <div class="d-flex flex-column">
+                  <div class="d-flex flex-row justify-content-between">
+                    <p class="mb-0">Net Total Before VAT:</p>
+                    <p class="mb-0">&nbsp;&nbsp;</p>
+                    <p class="mb-0"><span id="subTotal" class="fw-bold"></span></p>
+                  </div>
+                  <div class="d-flex flex-row justify-content-between">
+                    <p class="mb-0">VAT 11%: </p>
+                    <p class="mb-0">&nbsp;&nbsp;</p>
+                    <p class="mb-0"><span id="vat" class="fw-bold"></span></p>
+                  </div>
+
+                  <div class="d-flex flex-row justify-content-between">
+                    <p class="mb-0">Net Total: </p>
+                    <p class="mb-0">&nbsp;&nbsp;</p>
+                    <p class="mb-0"><span id="total" class="fw-bold"></span></p>
+                  </div>
                 </div>
               </div>
               <hr>
@@ -365,7 +378,7 @@ function updateSummary() {
   });
 
   // Calculate VAT (15%)
-  var vat = 0.15 * subTotal;
+  var vat = 0.11 * subTotal;
 
   // Calculate total
   var total = subTotal + vat;
